@@ -17,7 +17,7 @@ body {
 	font-size: 12px;
 }
 .STYLE6 {
-    color: #000000; 
+    color: #000000; 1
     font-size: 12px; 
     }
 .STYLE10 {
