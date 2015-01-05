@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <!-- 默认配置的数据源 -->
+	<default-config>
+	    <!-- 指定数据库的驱动 -->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<!-- 指定数据库的连接URL -->
+		<property name="jdbcUrl">jdbc:mysql:///yk</property>
+		<!-- 指定连接的用户和密码 -->
+		<property name="user">root</property>
+		<property name="password">root</property>
+		<!-- 指定每次增长的连接数目 -->
+		<property name="acquireIncrement">5</property>
+		<!-- 指定初始化连接池中的连接数  -->
+		<property name="initialPoolSize">10</property>
+		<!-- 指定连接池中的最小连接数  -->
+		<property name="minPoolSize">5</property>
+		<!-- 指定连接池中的最大连接数 -->
+		<property name="maxPoolSize">30</property>
+	</default-config>
+</c3p0-config>

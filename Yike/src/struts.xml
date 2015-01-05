@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="1024102400"/>
+	<package name="yike" extends="struts-default">
+		<action name="login" class="yk.action.LoginAction" method="login">
+			<result name="success">/jsps/backindex.jsp</result>
+			<result name="error">/backlogin.jsp</result>
+		</action>
+		<action name="logout" class="yk.action.LoginAction" method="logout">
+			<result name="success">/backlogin.jsp</result>
+		</action>
+		<action name="addproduct" class="yk.action.ProductAction" method="add">
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">
+					image/bmp,image/png,image/gif,image/jpeg,image/jpg
+				</param>
+			</interceptor-ref>
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="allproduct" class="yk.action.ProductAction" method="getAll">
+			<result name="success">/jsps/listproduct.jsp</result>
+		</action>
+		<action name="editproduct" class="yk.action.ProductAction" method="edit">
+			<result name="success">/jsps/editProduct.jsp</result>
+		</action>
+		<action name="saveOne" class="yk.action.ProductAction" method="saveOne">
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">
+					image/bmp,image/png,image/gif,image/jpeg,image/jpg
+				</param>
+			</interceptor-ref>
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="delOne" class="yk.action.ProductAction" method="delOne">
+			<result name="success">/message.jsp</result>
+		</action>
+		<action name="addNews" class="yk.action.NewsAction" method="addnews">
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="allnews" class="yk.action.NewsAction" method="getAllNews">
+			<result name="success">/jsps/listnews.jsp</result>
+		</action>
+		<action name="editnews" class="yk.action.NewsAction" method="edit">
+			<result name="success">/jsps/editNews.jsp</result>
+		</action>
+		<action name="savenews" class="yk.action.NewsAction" method="saveOneNews">
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="delOnenews" class="yk.action.NewsAction" method="delOne">
+			<result name="success">/message.jsp</result>
+		</action>
+		<action name="addproject" class="yk.action.ProjectAction" method="add">
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">
+					image/bmp,image/png,image/gif,image/jpeg,image/jpg
+				</param>
+			</interceptor-ref>
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="allproject" class="yk.action.ProjectAction" method="getAll">
+			<result name="success">/jsps/listproject.jsp</result>
+		</action>
+		<action name="editproject" class="yk.action.ProjectAction" method="edit">
+			<result name="success">/jsps/editProject.jsp</result>
+		</action>
+		<action name="saveOneproject" class="yk.action.ProjectAction" method="saveOne">
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">
+					image/bmp,image/png,image/gif,image/jpeg,image/jpg
+				</param>
+			</interceptor-ref>
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="delproject" class="yk.action.ProjectAction" method="delOne">
+			<result name="success">/message.jsp</result>
+		</action>
+		<action name="project" class="yk.application.action.ProjectActionApp" method="getProject">
+			<result name="success">/project.jsp</result>
+		</action>
+		<action name="allnewsapp" class="yk.application.action.NewsActionApp" method="getAll">
+			<result name="success">/news.jsp</result>
+		</action>
+		<action name="getOneNews" class="yk.application.action.NewsActionApp" method="getOne">
+			<result name="success">/newsitem.jsp</result>
+		</action>
+		<action name="news" class="yk.application.action.NewsActionApp" method="getnews">
+			<result name="success">/onenews.jsp</result>
+		</action>
+		<action name="email" class="yk.application.action.EmailApp" method="send">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="allemail" class="yk.action.EmailAction" method="getAll">
+			<result name="success">/jsps/listemail.jsp</result>
+		</action>
+		<action name="alljob" class="yk.action.JoinAction" method="getAll">
+			<result name="success">/jsps/join.jsp</result>
+		</action>
+		<action name="addjob" class="yk.action.JoinAction" method="addOne">
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>		
+		<action name="editjob" class="yk.action.JoinAction" method="edit">
+			<result name="success">/jsps/editjob.jsp</result>
+		</action>
+		<action name="savejob" class="yk.action.JoinAction" method="save">
+			<result name="success">/message.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="deljob" class="yk.action.JoinAction" method="delete">
+			<result name="success">/message.jsp</result>
+		</action>
+	</package>
+</struts>    
